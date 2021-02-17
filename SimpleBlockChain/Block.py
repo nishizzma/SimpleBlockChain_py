@@ -1,9 +1,9 @@
 import datetime
 import hashlib
 
-from Message import ChaorsMessage
-from Message import InvalidMessage
-from Transaction import Transaction
+from SimpleBlockChain.Message import ChaorsMessage
+from SimpleBlockChain.Message import InvalidMessage
+from SimpleBlockChain.Transaction import Transaction
 
 class Block:
 
@@ -11,7 +11,7 @@ class Block:
 
         self.messagelist = []  #存储多个交易记录
         self.timestamp = None
-        self.hash = None;
+        self.hash = None
         self.prev_hash = None
 
         if args:
@@ -46,16 +46,15 @@ class Block:
         for i, msg in enumerate(self.messagelist):
             msg.validate()
             if i > 0 and msg.prev_hash != self.messagelist[i-1].hash:
-                raise InvalidBlock("无效block，第{}条交易记录被修改".format(i)+ str(self))
+                raise InvalidBlock("无效block，第{}条交易记录被修改\n".format(i)+ str(self))
 
         return str(self) + "block ok..."
 
     def __repr__(self):
 
-        return "block = hash:{}, prehash:{}, len:{}, time:{}".format(self.hash,
-                                                                     self.prev_hash,
-                                                                     len(self.messagelist),
-                                                                     self.timestamp)
+        return "===============\nblock = hash:{}\nprehash:{}\nlen:{}\ntime:{}\n==============="\
+            .format(self.hash,self.prev_hash,len(self.messagelist),self.timestamp)
+
 class InvalidBlock(Exception):  #异常处理类
 
     def __init__(self, *args, **kwargs):

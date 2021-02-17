@@ -2,7 +2,7 @@
 
 import datetime
 import hashlib
-from Transaction import Transaction
+from SimpleBlockChain.Transaction import Transaction
 
 class ChaorsMessage: #交易记录类
 

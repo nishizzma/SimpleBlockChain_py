@@ -1,11 +1,11 @@
 import datetime
 import hashlib
 
-from Block import Block
-from Block import InvalidBlock
-from Message import ChaorsMessage
-from Message import InvalidMessage
-from Transaction import Transaction
+from SimpleBlockChain.Block import Block
+from SimpleBlockChain.Block import InvalidBlock
+from SimpleBlockChain.Message import ChaorsMessage
+from SimpleBlockChain.Message import InvalidMessage
+from SimpleBlockChain.Transaction import Transaction
 
 class BlockChain:
 

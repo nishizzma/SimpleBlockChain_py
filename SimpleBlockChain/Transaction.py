@@ -15,7 +15,7 @@ class Transaction: #交易类
 
     def __repr__(self):
 
-        return str(self.payer) + " pay" + str(self.recer) + " " + str(self.count) + " in " + str(self.timestamp)
+        return str(self.payer) + " pay " + str(self.recer) + " " + str(self.count) + " in " + str(self.timestamp)
 
 
 if __name__ == '__main__':
